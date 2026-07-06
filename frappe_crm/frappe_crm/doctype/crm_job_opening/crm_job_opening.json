@@ -62,7 +62,7 @@
    "fieldtype": "Date",
    "label": "Posted On"
   },
-    {
+  {
    "fieldname": "section_break_1",
    "fieldtype": "Section Break"
   },
@@ -125,9 +125,12 @@
    "label": "Teable Ref Code"
   }
  ],
- "modified": "2026-02-08 17:46:25.047000",
- "module": "CRM",
+ "links": [],
+ "modified": "2026-03-16 00:11:02.362453",
+ "modified_by": "Administrator",
+ "module": "Frappe CRM",
  "name": "CRM Job Opening",
+ "naming_rule": "Expression (old style)",
  "owner": "Administrator",
  "permissions": [
   {
@@ -167,7 +170,9 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "sort_field": "modified",
  "sort_order": "DESC",
+ "states": [],
  "title_field": "job_title"
 }
