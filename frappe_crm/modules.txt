@@ -1,4 +1,3 @@
 Frappe CRM
-CRM
 Papermark
 Formbricks
