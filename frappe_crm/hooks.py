@@ -270,3 +270,8 @@ fixtures = [
 ]
 
 
+
+override_whitelisted_methods = {
+    "crm.api.doc.upsert": "frappe_crm.api.doc.upsert"
+}
+
