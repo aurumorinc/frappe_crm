@@ -8,6 +8,7 @@ class TestJinjaUtils(FrappeTestCase):
         # Create a mock Lead
         self.lead = frappe.get_doc({
             "doctype": "CRM Lead",
+            "first_name": "Test",
             "lead_name": "Test Lead for Link",
         }).insert(ignore_permissions=True)
 
@@ -18,7 +19,7 @@ class TestJinjaUtils(FrappeTestCase):
             "reference_name": self.lead.name,
             "document": "Test Document",
             "url": "https://example.com/document"
-        }).insert(ignore_permissions=True)
+        }).insert(ignore_permissions=True, ignore_links=True)
 
         # Create a mock Formbricks Personal Link
         self.personal_link = frappe.get_doc({
@@ -27,12 +28,12 @@ class TestJinjaUtils(FrappeTestCase):
             "reference_name": self.lead.name,
             "survey": "Test Survey",
             "url": "https://example.com/survey"
-        }).insert(ignore_permissions=True)
+        }).insert(ignore_permissions=True, ignore_links=True)
 
     def tearDown(self):
-        self.link.delete()
-        self.personal_link.delete()
-        self.lead.delete()
+        self.link.delete(force=True)
+        self.personal_link.delete(force=True)
+        self.lead.delete(force=True)
 
     def test_get_lead_link_papermark(self):
         url = get_lead_link(self.lead.name, "Test Document")
